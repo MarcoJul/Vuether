@@ -2,6 +2,7 @@
 
 import { ref, computed } from 'vue';
 import type { Ref, ComputedRef } from 'vue';
+import DayCard from './components/DayCard.vue';
 
 interface DaysInfo {
   conditions: string;
@@ -41,6 +42,7 @@ const daysShown: ComputedRef<DaysInfo[]> = computed(()=> {
   <div class="plain-background">
     <div class="container">
       <p v-if="!isLoading" v-for="day in daysShown">
+        <DayCard/>
         {{ day.datetime }}
         {{ day.temp }}<br>
         {{ day.conditions }}
