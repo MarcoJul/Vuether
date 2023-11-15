@@ -42,10 +42,7 @@ const daysShown: ComputedRef<DaysInfo[]> = computed(()=> {
   <div class="plain-background">
     <div class="container">
       <p v-if="!isLoading" v-for="day in daysShown">
-        <DayCard/>
-        {{ day.datetime }}
-        {{ day.temp }}<br>
-        {{ day.conditions }}
+        <DayCard :day="day"/>
       </p>
       <p v-else>Loading..</p>
     </div>
